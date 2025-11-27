@@ -1,0 +1,373 @@
+{
+  "id": "16",
+  "title": "IELTS Academic Reading Practice Test 16",
+  "duration": 60,
+  "totalQuestions": 40,
+  "complete": true,
+  "score": "8",
+  "passages": [
+    {
+      "id": "passage-1",
+      "passageNumber": 1,
+      "title": "The Rise of Urban Gardening",
+      "text": "Urban gardening has become increasingly popular in many major cities around the world. As urban populations rise and green spaces decrease, people have turned to creative ways to grow plants in limited environments. Rooftop gardens, vertical planting systems, and community garden plots are now common features in dense residential areas.\n\nOne of the main motivations behind urban gardening is the desire for fresh, local food. Many city residents value the ability to grow their own vegetables, free from the industrial farming system. Research has shown that urban gardens can improve nutrition and even support mental well-being by reducing stress levels.\n\nDespite these benefits, urban gardening faces certain challenges. Access to sunlight is limited in tall, crowded neighborhoods, and soil contamination can be a concern in older cities. To address this, some gardeners use hydroponic systems, which allow plants to grow without soil. Cities like Singapore and Tokyo have even started supporting large-scale urban farms to reduce food imports and increase local production.",
+      "questions": [
+        {
+          "id": "q1",
+          "questionNumber": 1,
+          "type": "multiple-choice",
+          "question": "Urban gardening became more common mainly because:",
+          "options": [
+            "A. It is cheaper than industrial farming",
+            "B. Green spaces in cities are decreasing",
+            "C. People want to reduce water usage",
+            "D. Cities banned chemical fertilizers"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q2",
+          "questionNumber": 2,
+          "type": "multiple-choice",
+          "question": "A benefit mentioned about urban gardening is:",
+          "options": [
+            "A. Increased job opportunities",
+            "B. Better transportation systems",
+            "C. Improved mental health",
+            "D. Replacement of industrial farms"
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": "q3",
+          "questionNumber": 3,
+          "type": "multiple-choice",
+          "question": "One challenge for urban gardening is:",
+          "options": [
+            "A. Too much sunlight",
+            "B. Lack of interest from residents",
+            "C. Overcrowded markets",
+            "D. Soil contamination"
+          ],
+          "correctAnswer": "D"
+        },
+        {
+          "id": "q4",
+          "questionNumber": 4,
+          "type": "multiple-choice",
+          "question": "Hydroponic systems help gardeners by:",
+          "options": [
+            "A. Reducing the cost of tools",
+            "B. Preventing the need for soil",
+            "C. Increasing the size of gardens",
+            "D. Allowing plants to grow faster"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q5",
+          "questionNumber": 5,
+          "type": "true-false-not-given",
+          "question": "Urban gardening is a new concept created in the last decade.",
+          "correctAnswer": "NOT GIVEN"
+        },
+        {
+          "id": "q6",
+          "questionNumber": 6,
+          "type": "true-false-not-given",
+          "question": "Urban gardens can help improve people's diets.",
+          "correctAnswer": "TRUE"
+        },
+        {
+          "id": "q7",
+          "questionNumber": 7,
+          "type": "true-false-not-given",
+          "question": "Singapore relies heavily on imported food.",
+          "correctAnswer": "NOT GIVEN"
+        },
+        {
+          "id": "q8",
+          "questionNumber": 8,
+          "type": "true-false-not-given",
+          "question": "Vertical gardening requires large amounts of land.",
+          "correctAnswer": "FALSE"
+        },
+        {
+          "id": "q9",
+          "questionNumber": 9,
+          "type": "true-false-not-given",
+          "question": "Mental health benefits from gardening are supported by research.",
+          "correctAnswer": "TRUE"
+        },
+        {
+          "id": "q10",
+          "questionNumber": 10,
+          "type": "sentence-completion",
+          "question": "Many city residents enjoy having access to __________ food.",
+          "wordLimit": 2,
+          "correctAnswer": "fresh, local"
+        },
+        {
+          "id": "q11",
+          "questionNumber": 11,
+          "type": "sentence-completion",
+          "question": "A lack of __________ makes gardening difficult in crowded cities.",
+          "wordLimit": 2,
+          "correctAnswer": "sunlight"
+        },
+        {
+          "id": "q12",
+          "questionNumber": 12,
+          "type": "sentence-completion",
+          "question": "Some gardeners use __________ to avoid polluted soil.",
+          "wordLimit": 2,
+          "correctAnswer": "hydroponic systems"
+        },
+        {
+          "id": "q13",
+          "questionNumber": 13,
+          "type": "sentence-completion",
+          "question": "Tokyo is supporting __________ urban farms to increase local food supply.",
+          "wordLimit": 2,
+          "correctAnswer": "large-scale"
+        }
+      ]
+    },
+    {
+      "id": "passage-2",
+      "passageNumber": 2,
+      "title": "The Mystery of Ant Navigation",
+      "text": "For decades, scientists have been fascinated by the desert ant's remarkable ability to navigate across vast, featureless landscapes. Unlike many animals that rely on landmarks, desert ants must travel long distances in search of food and then return to their nests without getting lost. Their environment offers almost no visual cues, yet their navigation accuracy is impressive.\n\nResearchers discovered that desert ants use a technique known as path integration. This means they constantly calculate the direction and distance they have traveled. As an ant walks, it keeps track of every twist and turn, allowing it to take a direct path home, even if its outbound journey was complicated.\n\nAnother surprising discovery is that ants use the position of the sun as a compass. Their eyes contain specialized light-sensitive cells that can detect polarized light \u2014 a type of light pattern humans cannot see. Even on cloudy days, these cells help the ants determine direction.\n\nHowever, path integration alone is not perfect. Small errors can accumulate over time. To prevent mistakes, ants sometimes use their sense of smell and ground textures near the entrance of their nest as final confirmation. This combination of navigation methods allows them to survive in harsh desert conditions.",
+      "questions": [
+        {
+          "id": "q14",
+          "questionNumber": 14,
+          "type": "matching-information",
+          "question": "Match each detail to the correct paragraph (1-4).",
+          "instruction": "A. Ants use additional senses to avoid navigation errors\nB. Discovery of path integration\nC. Why navigation is difficult in the desert\nD. Ants' ability to detect polarized light\nE. How ants track their movements",
+          "correctAnswers": {
+            "A": "4",
+            "B": "2",
+            "C": "1",
+            "D": "3",
+            "E": "2"
+          }
+        },
+        {
+          "id": "q19",
+          "questionNumber": 19,
+          "type": "multiple-choice",
+          "question": "Desert ants can navigate accurately even though:",
+          "options": [
+            "A. They move too slowly",
+            "B. Their environment lacks markers",
+            "C. They have poor eyesight",
+            "D. They follow other ants"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q20",
+          "questionNumber": 20,
+          "type": "multiple-choice",
+          "question": "Path integration allows an ant to:",
+          "options": [
+            "A. Find food faster",
+            "B. Follow magnetic fields",
+            "C. Walk directly home",
+            "D. Walk only in straight lines"
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": "q21",
+          "questionNumber": 21,
+          "type": "multiple-choice",
+          "question": "What type of light can ants detect?",
+          "options": [
+            "A. Infrared light",
+            "B. Polarized light",
+            "C. Radio waves",
+            "D. Fluorescent light"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q22",
+          "questionNumber": 22,
+          "type": "multiple-choice",
+          "question": "Path integration is not perfect because:",
+          "options": [
+            "A. Ants forget directions",
+            "B. Weather affects their eyes",
+            "C. Errors gradually add up",
+            "D. Ants change their speed"
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": "q23",
+          "questionNumber": 23,
+          "type": "multiple-choice",
+          "question": "Ants sometimes use smell near the nest to:",
+          "options": [
+            "A. Avoid predators",
+            "B. Confirm their location",
+            "C. Find other ants",
+            "D. Search for water"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q24",
+          "questionNumber": 24,
+          "type": "short-answer",
+          "question": "What do scientists find impressive about ants?",
+          "wordLimit": 2,
+          "correctAnswer": "navigation accuracy"
+        },
+        {
+          "id": "q25",
+          "questionNumber": 25,
+          "type": "short-answer",
+          "question": "What do ants use as a natural compass?",
+          "wordLimit": 2,
+          "correctAnswer": "the sun"
+        },
+        {
+          "id": "q26",
+          "questionNumber": 26,
+          "type": "short-answer",
+          "question": "What helps ants detect direction even when it's cloudy?",
+          "wordLimit": 2,
+          "correctAnswer": "light-sensitive cells"
+        }
+      ]
+    },
+    {
+      "id": "passage-3",
+      "passageNumber": 3,
+      "title": "The Future of Public Transportation",
+      "text": "As global populations continue to expand, cities are searching for efficient and environmentally friendly modes of transportation. Public transportation systems, which include buses, trains, and trams, are increasingly being redesigned to reduce carbon emissions and improve passenger convenience.\n\nOne solution gaining popularity is electric public transport. Electric buses and trains produce significantly fewer emissions compared to traditional diesel-powered vehicles. Many cities in Europe and Asia have already introduced electric bus fleets, and governments provide incentives to encourage wider adoption.\n\nAnother promising development is the concept of autonomous (self-driving) public transport. Autonomous shuttles are already being tested in several countries. These vehicles use a combination of cameras, sensors, and artificial intelligence to navigate roads. If widely implemented, they could reduce traffic accidents caused by human error and operate on flexible schedules.\n\nHowever, challenges still remain. Electric vehicles require substantial charging infrastructure, which can be costly to install. Autonomous transport raises safety and privacy concerns, as the data collected by sensors must be protected. Additionally, some passengers may hesitate to trust fully automated systems.\n\nDespite the challenges, experts believe the future of public transport lies in combining these innovations. Cities that integrate electric, autonomous, and data-driven systems may be able to provide cleaner, safer, and more efficient transportation for growing populations.",
+      "questions": [
+        {
+          "id": "q27",
+          "questionNumber": 27,
+          "type": "true-false-not-given",
+          "question": "Population growth is increasing the demand for better transportation.",
+          "correctAnswer": "TRUE"
+        },
+        {
+          "id": "q28",
+          "questionNumber": 28,
+          "type": "true-false-not-given",
+          "question": "Electric buses completely eliminate air pollution.",
+          "correctAnswer": "FALSE"
+        },
+        {
+          "id": "q29",
+          "questionNumber": 29,
+          "type": "true-false-not-given",
+          "question": "Several European cities currently use electric buses.",
+          "correctAnswer": "TRUE"
+        },
+        {
+          "id": "q30",
+          "questionNumber": 30,
+          "type": "true-false-not-given",
+          "question": "Autonomous shuttles have already been introduced in commercial service.",
+          "correctAnswer": "NOT GIVEN"
+        },
+        {
+          "id": "q31",
+          "questionNumber": 31,
+          "type": "true-false-not-given",
+          "question": "Fully automated systems are trusted by most passengers.",
+          "correctAnswer": "FALSE"
+        },
+        {
+          "id": "q32",
+          "questionNumber": 32,
+          "type": "matching-features",
+          "question": "Match the innovation with the correct description.",
+          "features": {
+            "A": "Electric transport",
+            "B": "Autonomous vehicles",
+            "C": "Data-driven systems"
+          },
+          "correctAnswers": {
+            "Helps reduce accidents caused by humans": "B",
+            "Requires charging stations": "A",
+            "Relies on AI and sensors": "B",
+            "Uses collected information for operation efficiency": "C"
+          }
+        },
+        {
+          "id": "q36",
+          "questionNumber": 36,
+          "type": "multiple-choice",
+          "question": "Electric public transport is popular because:",
+          "options": [
+            "A. It is the cheapest form of transport",
+            "B. It produces fewer emissions",
+            "C. It can travel faster",
+            "D. It does not need maintenance"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q37",
+          "questionNumber": 37,
+          "type": "multiple-choice",
+          "question": "Autonomous vehicles may benefit cities by:",
+          "options": [
+            "A. Replacing all existing buses",
+            "B. Creating more traffic",
+            "C. Reducing human-related accidents",
+            "D. Cutting fuel prices"
+          ],
+          "correctAnswer": "C"
+        },
+        {
+          "id": "q38",
+          "questionNumber": 38,
+          "type": "multiple-choice",
+          "question": "A challenge for autonomous transport is:",
+          "options": [
+            "A. Limited seating capacity",
+            "B. Safety and privacy issues",
+            "C. Lack of government interest",
+            "D. High ticket prices"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q39",
+          "questionNumber": 39,
+          "type": "multiple-choice",
+          "question": "One reason some people hesitate to use autonomous vehicles is:",
+          "options": [
+            "A. Long travel routes",
+            "B. Distrust of automation",
+            "C. Slow driving speeds",
+            "D. Lack of air-conditioning"
+          ],
+          "correctAnswer": "B"
+        },
+        {
+          "id": "q40",
+          "questionNumber": 40,
+          "type": "multiple-choice",
+          "question": "Experts believe future transportation systems will:",
+          "options": [
+            "A. Use only autonomous vehicles",
+            "B. Ignore environmental concerns",
+            "C. Combine several new technologies",
+            "D. Replace trains with drones"
+          ],
+          "correctAnswer": "C"
+        }
+      ]
+    }
+  ]
+}
