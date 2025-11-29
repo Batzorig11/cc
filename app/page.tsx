@@ -15,9 +15,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="w-full h-full p-2">
-      <div className="w-full h-fit justify-end items-end flex">
-        <ModeToggle />
-      </div>
       <main className="w-full h-full flex justify-center flex-col items-center">
         <div className="text-6xl Gregorian">
           Choose Your Test and Start Learning

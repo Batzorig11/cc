@@ -36,7 +36,7 @@ export default function IELTS() {
             <CardTitle>Listening</CardTitle>
             <CardDescription>Card Description</CardDescription>
             <CardAction>
-              <Link href="/">Start</Link>
+              <Link href="ielts/practice/listening">Start</Link>
             </CardAction>
           </CardHeader>
           <CardContent>
