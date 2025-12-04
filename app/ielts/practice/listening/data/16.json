@@ -5,7 +5,7 @@
   "totalQuestions": 10,
   "complete": true,
   "score": "9",
-  "passages": [
+  "sections": [
     {
       "id": "section-1",
       "passageNumber": 1,

@@ -9,12 +9,26 @@ import { Button } from "@/components/ui/button";
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const [isAnimating, setIsAnimating] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     setIsAnimating(true);
     setTheme(theme === "dark" ? "light" : "dark");
     setTimeout(() => setIsAnimating(false), 600);
   };
+
+  if (!mounted) {
+    return (
+      <Button variant="outline" size="icon" className="relative overflow-hidden">
+        <span className="sr-only">Toggle theme</span>
+        <Sun className="h-[1.2rem] w-[1.2rem]" />
+      </Button>
+    );
+  }
 
   return (
     <Button
