@@ -1,66 +1,84 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getAllListeningTests } from "./data";
+import { use, useEffect, useState } from "react";
+import { getAllTests } from "./data";
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CircleCheck, CircleCheckIcon, CircleXIcon } from "lucide-react";
 
-export default function Listening() {
-    const [tests, setTests] = useState<any[]>([]);
-    useEffect(() => {
-        async function fetchData() {
-            const data = await getAllListeningTests();
-            setTests(data);
-        }
-        fetchData();
-    }, []);
+export default function Reading() {
+  const [tests, setTests] = useState<any[]>([]);
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getAllTests();
+      setTests(data);
+    }
+    fetchData();
+  }, []);
 
-    return (
-        <div className="w-full h-screen flex items-center justify-center flex-col p-4">
-            <div className="Gregorian text-2xl m-5">Listening Practice</div>
-            {tests.length > 0 ? (
-                <div className="w-full h-full gap-10 grid grid-cols-4">
-                    {tests.map((test, index) => (
-                        <div
-                            className="w-full h-fit flex justify-between flex-col p-2"
-                            key={index}
-                        >
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle className="w-full tracking-wide">
-                                        {test.title}
-                                    </CardTitle>
-                                    <CardDescription>
-                                        Questions number {test.totalQuestions}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p>{test.complete ? "Completed" : "Not Completed"}</p>
-                                    <p>Duration : {test.duration}min</p>
-                                    <div>Score {test.score}/{test.totalQuestions}</div>
-                                </CardContent>
-                                <CardFooter>
-                                    <Button>
-                                        <Link href={`listening/test/${test.id}`}>Start</Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <div className="w-full h-full flex justify-center items-center text-2xl">
-                    Loading...
-                </div>
-            )}
+  return (
+    <div className="w-full h-screen flex items-center justify-center flex-col p-4">
+      <div className="Gregorian text-2xl m-5">You can do this</div>
+      {tests.length > 0 ? (
+        <div className="w-full h-full gap-10 grid grid-cols-4">
+          {tests.map((test, index) => (
+            <div
+              className="w-full h-fit flex justify-between flex-col p-2"
+              key={index}
+            >
+              <Card>
+                <CardHeader>
+                  <CardTitle className="w-full tracking-wide">
+                    {test.title}
+                  </CardTitle>
+                  <CardDescription>
+                    Асуултын тоо {test.totalQuestions}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p
+                    className={`font-bold  flex justify-start items-center my-2 ${test.complete ? `text-green-500` : `text-blue-500`
+                      }`}
+                  >
+                    {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
+                    {test.complete && <CircleCheck className="ml-2" />}
+                    {!test.complete && <CircleXIcon className="ml-2" />}
+                  </p>
+                  <p className="my-2">
+                    Хугацаа :{" "}
+                    <span className="font-bold">{test.duration}мин</span>
+                  </p>
+                  <div>
+                    Оноо :{" "}
+                    <span className="font-bold">
+                      {test.score}/{test.totalQuestions} (
+                      {(test.score / test.totalQuestions) * 100}%)
+                    </span>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button>
+                    <Link href={`listening/test/${test.id}`}>Эхлэх</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          ))}
         </div>
-    );
+      ) : (
+        <div className="w-full h-full flex justify-center items-center text-2xl">
+          Loading...
+        </div>
+      )}
+    </div>
+  );
 }

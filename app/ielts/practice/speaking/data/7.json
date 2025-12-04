@@ -1,0 +1,116 @@
+{
+  "id": "speaking-7",
+  "title": "IELTS Speaking Test Practice 7",
+  "duration": 15,
+  "totalParts": 3,
+  "complete": false,
+  "score": null,
+  "parts": [
+    {
+      "id": "part-1",
+      "partNumber": 1,
+      "title": "Introduction and Interview",
+      "instructions": "The examiner asks general questions about the candidate.",
+      "questions": [
+        {
+          "id": "p1-q1",
+          "questionNumber": 1,
+          "type": "speaking",
+          "question": "Can you tell me your full name, please?"
+        },
+        {
+          "id": "p1-q2",
+          "questionNumber": 2,
+          "type": "speaking",
+          "question": "Where are you from?"
+        },
+        {
+          "id": "p1-q3",
+          "questionNumber": 3,
+          "type": "speaking",
+          "question": "Do you work or are you a student?"
+        },
+        {
+          "id": "p1-q4",
+          "questionNumber": 4,
+          "type": "speaking",
+          "question": "What do you enjoy most about your work or studies?"
+        },
+        {
+          "id": "p1-q5",
+          "questionNumber": 5,
+          "type": "speaking",
+          "question": "What is a typical day like for you?"
+        },
+        {
+          "id": "p1-q6",
+          "questionNumber": 6,
+          "type": "speaking",
+          "question": "Has your hometown changed in recent years?"
+        }
+      ]
+    },
+    {
+      "id": "part-2",
+      "partNumber": 2,
+      "title": "Long Turn (Cue Card)",
+      "instructions": "The candidate speaks for 1–2 minutes after 1 minute of preparation.",
+      "cueCard": {
+        "id": "cue-1",
+        "questionNumber": 7,
+        "type": "cue-card",
+        "topic": "Describe a person you know who is very creative.",
+        "prompts": [
+          "who this person is",
+          "how you know them",
+          "what creative things they do",
+          "and explain why you think this person is creative"
+        ]
+      }
+    },
+    {
+      "id": "part-3",
+      "partNumber": 3,
+      "title": "Discussion",
+      "instructions": "The examiner asks deeper questions related to Part 2 topic.",
+      "questions": [
+        {
+          "id": "p3-q1",
+          "questionNumber": 8,
+          "type": "speaking",
+          "question": "Do you think creativity is important in everyday life? Why?"
+        },
+        {
+          "id": "p3-q2",
+          "questionNumber": 9,
+          "type": "speaking",
+          "question": "Are people today more creative than in the past?"
+        },
+        {
+          "id": "p3-q3",
+          "questionNumber": 10,
+          "type": "speaking",
+          "question": "Should schools encourage students to be more creative?"
+        },
+        {
+          "id": "p3-q4",
+          "questionNumber": 11,
+          "type": "speaking",
+          "question": "Which school subjects help develop creativity the most?"
+        },
+        {
+          "id": "p3-q5",
+          "questionNumber": 12,
+          "type": "speaking",
+          "question": "How important is creativity in modern workplaces?"
+        },
+        {
+          "id": "p3-q6",
+          "questionNumber": 13,
+          "type": "speaking",
+          "question": "Does technology help or limit creativity?"
+        }
+      ]
+    }
+  ]
+}

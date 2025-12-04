@@ -1,10 +1,9 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllTests } from "./data";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CircleCheck, CircleXIcon } from "lucide-react";
 
 export default function Reading() {
   const [tests, setTests] = useState<any[]>([]);
@@ -40,17 +40,34 @@ export default function Reading() {
                     {test.title}
                   </CardTitle>
                   <CardDescription>
-                    Questions number {test.totalQuestions}
+                    Асуултын тоо {test.totalQuestions}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>{test.complete ? "Completed" : "Not Completed"}</p>
-                  <p>Duration : {test.duration}min</p>
-                  <div>Score {test.score}/40</div>
+                  <p
+                    className={`font-bold  flex justify-start items-center my-2 ${
+                      test.complete ? `text-green-500` : `text-blue-500`
+                    }`}
+                  >
+                    {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
+                    {test.complete && <CircleCheck className="ml-2" />}
+                    {!test.complete && <CircleXIcon className="ml-2" />}
+                  </p>
+                  <p className="my-2">
+                    Хугацаа :{" "}
+                    <span className="font-bold">{test.duration}мин</span>
+                  </p>
+                  <div>
+                    Оноо :{" "}
+                    <span className="font-bold">
+                      {test.score}/{test.totalQuestions} (
+                      {(test.score / test.totalQuestions) * 100}%)
+                    </span>
+                  </div>
                 </CardContent>
                 <CardFooter>
                   <Button>
-                    <Link href={`reading/test/${test.id}`}>Start</Link>
+                    <Link href={`reading/test/${test.id}`}>Эхлэх</Link>
                   </Button>
                 </CardFooter>
               </Card>

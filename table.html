@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spending Patterns by Category</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      .tables-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .table-title {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Spending Patterns by Category (%)</h1>
+
+    <div class="tables-container">
+      <div class="table-wrapper">
+        <div class="table-title">Country A (%)</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>2000</th>
+              <th>2020</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Food</td>
+              <td>32</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Housing</td>
+              <td>26</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Health Care</td>
+              <td>10</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>Entertainment</td>
+              <td>8</td>
+              <td>12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-title">Country B (%)</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>2000</th>
+              <th>2020</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Food</td>
+              <td>28</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>Housing</td>
+              <td>30</td>
+              <td>33</td>
+            </tr>
+            <tr>
+              <td>Health Care</td>
+              <td>12</td>
+              <td>14</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
