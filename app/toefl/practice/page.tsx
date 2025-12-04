@@ -16,16 +16,16 @@ import { useState } from "react";
 export default function TOEFL() {
   const [daysRemaining, setDaysRemaining] = useState(0);
   return (
-    <div className="w-full px-4 flex flex-col justify-Эхлэх items-center">
+    <div className="w-full px-4 flex flex-col justify-center items-center">
       <div className=" text-xl flex justify-between w-3/4  ">
-        <div>
+        <div className="flex items-center justify-center bg-card rounded-md border flex-col p-10">
           <div className="flex items-center justify-center">
             Шалгалт өгөх өдөр :
             <Calendar22 onDateChange={(_, days) => setDaysRemaining(days)} />
           </div>
           <div>Үлдсэн хоног : {daysRemaining}</div>
         </div>
-        <div>
+        <div className="flex items-center justify-center bg-card rounded-md border flex-col p-10">
           <div>Зорьсон оноо : 8</div>
           <div>Одоогийн дундаж : 2.5</div>
         </div>
@@ -112,7 +112,7 @@ export default function TOEFL() {
             <CardDescription>Дундаж оноо : 5/9</CardDescription>
             <CardAction>
               <Button>
-                <Link href="practice/mock-test">Эхлэх</Link>
+                <Link href="practice/vocabulary">Эхлэх</Link>
               </Button>
             </CardAction>
           </CardHeader>

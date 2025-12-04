@@ -11,7 +11,7 @@ export default function ReadingTest() {
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
   const [answers, setAnswers] = useState({});
   const params = useParams();
-  const [passageNum, setPassageNum] = useState(1);
+  const [sectionNum, setSectionNum] = useState(1);
   const [test, setTest] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -45,8 +45,8 @@ export default function ReadingTest() {
     let correctAnswersCount = 0;
     console.log(answers);
 
-    test.passages.forEach((passage) => {
-      passage.questions.forEach((question) => {
+    test.sections.forEach((section) => {
+      section.questions.forEach((question) => {
         // Handle questions with single correctAnswer
         if (question.correctAnswer) {
           const userAnswer = answers[question.id];
@@ -128,33 +128,31 @@ export default function ReadingTest() {
 
           <div className="space-y-4 mb-6">
             <div className="flex justify-between items-center p-4 bg-muted rounded-md">
-              <span className="font-semibold">Үргэлжлэх хугацаа:</span>
-              <span>{test.duration} минут</span>
+              <span className="font-semibold">Duration:</span>
+              <span>{test.duration} minutes</span>
             </div>
             <div className="flex justify-between items-center p-4 bg-muted rounded-md">
-              <span className="font-semibold">Нийт асуултын тоо:</span>
+              <span className="font-semibold">Total Questions:</span>
               <span>{test.totalQuestions}</span>
             </div>
             <div className="flex justify-between items-center p-4 bg-muted rounded-md">
-              <span className="font-semibold">Passage-н тоо:</span>
-              <span>{test.passages.length}</span>
+              <span className="font-semibold">Number of Passages:</span>
+              <span>{test.sections.length}</span>
             </div>
           </div>
 
           <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-md p-4 mb-6">
             <h3 className="font-bold text-yellow-800 dark:text-yellow-200 mb-2">
-              Заавар:
+              Instructions:
             </h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-yellow-700 dark:text-yellow-300">
+              <li>Read each section carefully before answering questions</li>
+              <li>You have {test.duration} minutes to complete all sections</li>
               <li>
-                Асуултад хариулахын өмнө өгүүлбэр бүрийг анхааралтай уншаарай
+                The timer will start immediately when you click "Start Test"
               </li>
-              <li>
-                Бүх хэсгийг {test.duration} минутын дотор дуусгах шаардлагатай
-              </li>
-              <li>"Шалгалт эхлэх" дээр дармагц хугацаа шууд эхэлнэ</li>
-              <li>Өгүүлбэрүүдийн хооронд товчлууруудаар шилжиж болно</li>
-              <li>Цаг дуусахаас өмнө заавал илгээгээрэй</li>
+              <li>You can navigate between sections using the buttons</li>
+              <li>Make sure to submit before time runs out</li>
             </ul>
           </div>
 
@@ -163,7 +161,7 @@ export default function ReadingTest() {
             className="w-full text-lg py-6"
             size="lg"
           >
-            Шалгалт эхлэх
+            Start Test
           </Button>
         </div>
       </div>
@@ -171,7 +169,7 @@ export default function ReadingTest() {
   }
 
   return (
-    <div className="w-full min-h-screen p-4 flex flex-col justify-center items-center ">
+    <div className="w-full min-h-screen p-4 flex flex-col ">
       {test ? (
         <div>
           <div className="font-bold text-2xl mb-5 flex justify-between items-center">
@@ -186,61 +184,55 @@ export default function ReadingTest() {
           </div>
           <div className="w-full flex justify-between my-4 px-4 py-2 border rounded-md">
             <div className="flex gap-2 items-center">
-              Passage :{" "}
-              <Button
-                className={passageNum === 1 ? `bg-primary/85` : ``}
-                onClick={() => setPassageNum(1)}
-              >
-                1
-              </Button>
-              <Button
-                className={passageNum === 2 ? `bg-primary/85` : ``}
-                onClick={() => setPassageNum(2)}
-              >
-                2
-              </Button>
-              <Button
-                className={passageNum === 3 ? `bg-primary/85` : ``}
-                onClick={() => setPassageNum(3)}
-              >
-                3
-              </Button>
+              Section :{" "}
+              {test.sections.map((section) => (
+                <Button
+                  onClick={() => setSectionNum(section.sectionNumber)}
+                  key={section.id}
+                >
+                  {section.sectionNumber}
+                </Button>
+              ))}
             </div>
 
             <div>
               <div>
-                Үлдсэн хугацаа: {minutes}:{seconds.toString().padStart(2, "0")}
+                Time Left: {minutes}:{seconds.toString().padStart(2, "0")}
               </div>
               {submitted ? (
                 <Button className="w-full">
-                  <Link href="/ielts/practice/reading">Гарах</Link>
+                  <Link href="/ielts/practice/listening">End</Link>
                 </Button>
               ) : (
                 <Button className="w-full" onClick={() => onSubmit()}>
-                  Дуусгах
+                  Submit
                 </Button>
               )}
             </div>
           </div>
           {/*---PASSAGE-SECTION---*/}
           <div className="flex w-full gap-10">
-            <div className="w-full bg-card border rounded-md p-5 h-fit sticky top-18">
+            <div className="w-full bg-card border rounded-md p-5 h-fit sticky top-15">
               <h3 className="text-xl font-bold">
-                {test.passages[passageNum - 1].title}
+                {test.sections[sectionNum - 1].title}
+                <audio
+                  controls
+                  className="w-full my-6"
+                  src="/tcmac.fr - Crystal Castles - Pale Flesh (320 KBps).mp3"
+                ></audio>
               </h3>
-              <div className="mt-5 space-y-4">
-                {test.passages[passageNum - 1].text
-                  .split("\n\n")
-                  .map((paragraph, index) => (
-                    <p key={index} className="text-justify">
-                      {paragraph}
-                    </p>
-                  ))}
-              </div>
+              {test.sections[sectionNum - 1].audioTranscript
+                .split("\n")
+                .map((para, index) => (
+                  <p className="my-2" key={index}>
+                    {para}
+                  </p>
+                ))}
+              <div className="mt-5 space-y-4"></div>
             </div>
             {/*---QUESTION-SECTION---*/}
             <div className="w-full border bg-card rounded-md p-5 overflow-auto">
-              {test.passages[passageNum - 1].questions.map(
+              {test.sections[sectionNum - 1].questions.map(
                 (question, index) => (
                   <div key={index}>
                     <div className="font-bold">

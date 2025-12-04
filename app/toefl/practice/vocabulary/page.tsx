@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllTests } from "./data";
 import {
   Card,
@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CircleCheck, CircleCheckIcon, CircleXIcon } from "lucide-react";
 
-export default function Reading() {
+export default function Vocabulary() {
   const [tests, setTests] = useState<any[]>([]);
   useEffect(() => {
     async function fetchData() {
@@ -46,8 +46,9 @@ export default function Reading() {
                 </CardHeader>
                 <CardContent>
                   <p
-                    className={`font-bold  flex justify-start items-center my-2 ${test.complete ? `text-green-500` : `text-blue-500`
-                      }`}
+                    className={`font-bold  flex justify-start items-center my-2 ${
+                      test.complete ? `text-green-500` : `text-blue-500`
+                    }`}
                   >
                     {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
                     {test.complete && <CircleCheck className="ml-2" />}
@@ -60,14 +61,17 @@ export default function Reading() {
                   <div>
                     Оноо :{" "}
                     <span className="font-bold">
-                      {test.score}/{test.totalQuestions} (
-                      {(test.score / test.totalQuestions) * 100}%)
+                      {test.score ? test.score / test.totalQuestions : "0"} (
+                      {test.score
+                        ? (test.score / test.totalQuestions) * 100
+                        : "0"}
+                      %)
                     </span>
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button>
-                    <Link href={`listening/test/${test.id}`}>Эхлэх</Link>
+                    <Link href={`vocabulary/test/${test.id}`}>Эхлэх</Link>
                   </Button>
                 </CardFooter>
               </Card>

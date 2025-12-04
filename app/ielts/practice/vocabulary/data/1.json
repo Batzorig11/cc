@@ -1,0 +1,169 @@
+{
+  "id": "1",
+  "title": "IELTS Academic Vocabulary List 1",
+  "category": "vocabulary",
+  "totalWords": 20,
+  "complete": false,
+  "vocabulary": [
+    {
+      "id": "v1",
+      "word": "significant",
+      "partOfSpeech": "adjective",
+      "definition": "important or large enough to have an effect",
+      "example": "There was a significant increase in sales last year.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v2",
+      "word": "allocate",
+      "partOfSpeech": "verb",
+      "definition": "to distribute resources or duties for a purpose",
+      "example": "The government allocated more funds to education.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v3",
+      "word": "emphasize",
+      "partOfSpeech": "verb",
+      "definition": "to give special importance to something",
+      "example": "Teachers often emphasize the importance of practice.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v4",
+      "word": "decline",
+      "partOfSpeech": "verb",
+      "definition": "to decrease or become weaker",
+      "example": "Birth rates have declined in many developed countries.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v5",
+      "word": "infrastructure",
+      "partOfSpeech": "noun",
+      "definition": "the basic systems and services of a country such as roads and power supplies",
+      "example": "Improving public infrastructure is essential for economic growth.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "v6",
+      "word": "contribution",
+      "partOfSpeech": "noun",
+      "definition": "something you give or do to help achieve a goal",
+      "example": "His contribution to the project was highly valued.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v7",
+      "word": "sustainable",
+      "partOfSpeech": "adjective",
+      "definition": "able to be maintained over a long period without harming the environment",
+      "example": "Sustainable energy sources are becoming more popular.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v8",
+      "word": "approach",
+      "partOfSpeech": "noun",
+      "definition": "a method or way of doing something",
+      "example": "We need a new approach to solving traffic problems.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v9",
+      "word": "hypothesis",
+      "partOfSpeech": "noun",
+      "definition": "an idea suggested as a possible explanation for something",
+      "example": "The scientist tested her hypothesis with several experiments.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "v10",
+      "word": "consume",
+      "partOfSpeech": "verb",
+      "definition": "to use something, especially resources or food",
+      "example": "Modern households consume large amounts of electricity.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v11",
+      "word": "enhance",
+      "partOfSpeech": "verb",
+      "definition": "to improve or make something better",
+      "example": "The new software enhances the performance of the device.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v12",
+      "word": "emerge",
+      "partOfSpeech": "verb",
+      "definition": "to appear or become known",
+      "example": "New technologies continue to emerge each year.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v13",
+      "word": "inevitable",
+      "partOfSpeech": "adjective",
+      "definition": "certain to happen; unavoidable",
+      "example": "Change is inevitable in every industry.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "v14",
+      "word": "accurate",
+      "partOfSpeech": "adjective",
+      "definition": "correct and without mistakes",
+      "example": "The report contains accurate and up-to-date information.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v15",
+      "word": "affect",
+      "partOfSpeech": "verb",
+      "definition": "to influence or change something",
+      "example": "Weather can affect transportation systems.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v16",
+      "word": "expand",
+      "partOfSpeech": "verb",
+      "definition": "to increase in size or amount",
+      "example": "The company plans to expand into Asian markets.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v17",
+      "word": "interpret",
+      "partOfSpeech": "verb",
+      "definition": "to explain the meaning of something",
+      "example": "Students must interpret data in the graph.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v18",
+      "word": "maintain",
+      "partOfSpeech": "verb",
+      "definition": "to continue at the same level or keep something in good condition",
+      "example": "It is difficult to maintain a healthy lifestyle.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "v19",
+      "word": "potential",
+      "partOfSpeech": "noun",
+      "definition": "the ability to develop or succeed",
+      "example": "The new system has great potential to improve efficiency.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "v20",
+      "word": "impact",
+      "partOfSpeech": "noun",
+      "definition": "a strong effect on something or someone",
+      "example": "Climate change has a major impact on agriculture.",
+      "difficulty": "easy"
+    }
+  ]
+}

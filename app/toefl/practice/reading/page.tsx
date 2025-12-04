@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllTests } from "./data";
 import {
   Card,
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CircleCheck, CircleCheckIcon, CircleXIcon } from "lucide-react";
+import { CircleCheck, CircleXIcon } from "lucide-react";
 
 export default function Reading() {
   const [tests, setTests] = useState<any[]>([]);
@@ -23,11 +23,12 @@ export default function Reading() {
     }
     fetchData();
   }, []);
+
   return (
     <div className="w-full h-screen flex items-center justify-center flex-col p-4">
       <div className="Gregorian text-2xl m-5">You can do this</div>
       {tests.length > 0 ? (
-        <div className="w-full h-full gap-10 grid grasdidassdasd-cols-4">
+        <div className="w-full h-full gap-10 grid grid-cols-4">
           {tests.map((test, index) => (
             <div
               className="w-full h-fit flex justify-between flex-col p-2"
@@ -48,21 +49,25 @@ export default function Reading() {
                       test.complete ? `text-green-500` : `text-blue-500`
                     }`}
                   >
-                    {test.complete ? "Completed" : "Not Complete"}{" "}
+                    {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
                     {test.complete && <CircleCheck className="ml-2" />}
                     {!test.complete && <CircleXIcon className="ml-2" />}
                   </p>
                   <p className="my-2">
-                    Duration :{" "}
-                    <span className="font-bold">{test.duration}min</span>
+                    Хугацаа :{" "}
+                    <span className="font-bold">{test.duration}мин</span>
                   </p>
                   <div>
-                    Оноо : <span className="font-bold">{test.score}/40</span>
+                    Оноо :{" "}
+                    <span className="font-bold">
+                      {test.score}/{test.totalQuestions} (
+                      {(test.score / test.totalQuestions) * 100}%)
+                    </span>
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button>
-                    <Link href={`reading/test/${test.id}`}>Start</Link>
+                    <Link href={`reading/test/${test.id}`}>Эхлэх</Link>
                   </Button>
                 </CardFooter>
               </Card>
