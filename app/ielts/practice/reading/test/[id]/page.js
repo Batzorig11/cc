@@ -47,12 +47,10 @@ export default function ReadingTest() {
 
     test.passages.forEach((passage) => {
       passage.questions.forEach((question) => {
-        // Handle questions with single correctAnswer
         if (question.correctAnswer) {
           const userAnswer = answers[question.id];
 
           if (question.type === "multiple-choice") {
-            // Extract first letter from "A. Some option text"
             const firstLetter = userAnswer ? userAnswer[0] : null;
 
             if (firstLetter === question.correctAnswer) {
@@ -76,7 +74,6 @@ export default function ReadingTest() {
             question.type === "sentence-completion" ||
             question.type === "short-answer"
           ) {
-            // For text answers, you might want to do case-insensitive comparison
             const userAnswerLower = userAnswer?.toLowerCase().trim();
             const correctAnswerLower = question.correctAnswer
               .toLowerCase()
@@ -91,9 +88,7 @@ export default function ReadingTest() {
               );
             }
           }
-        }
-        // Handle questions with multiple correctAnswers (matching questions)
-        else if (question.correctAnswers) {
+        } else if (question.correctAnswers) {
           Object.entries(question.correctAnswers).forEach(
             ([key, correctValue]) => {
               const userAnswer = answers[`${question.id}-${key}`];

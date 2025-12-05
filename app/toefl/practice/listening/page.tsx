@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CircleCheck, CircleCheckIcon, CircleXIcon } from "lucide-react";
+import { CircleCheck, CircleXIcon } from "lucide-react";
 
 export default function Reading() {
   const [tests, setTests] = useState<any[]>([]);
@@ -46,8 +46,9 @@ export default function Reading() {
                 </CardHeader>
                 <CardContent>
                   <p
-                    className={`font-bold  flex justify-start items-center my-2 ${test.complete ? `text-green-500` : `text-blue-500`
-                      }`}
+                    className={`font-bold  flex justify-start items-center my-2 ${
+                      test.complete ? `text-green-500` : `text-blue-500`
+                    }`}
                   >
                     {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
                     {test.complete && <CircleCheck className="ml-2" />}

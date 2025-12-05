@@ -1,6 +1,6 @@
 {
   "id": "6",
-  "title": "IELTS Listening Practice Test 6",
+  "title": "TOEFL Listening Practice Test 6",
   "duration": 30,
   "totalQuestions": 10,
   "complete": true,
@@ -34,11 +34,7 @@
           "questionNumber": 3,
           "type": "multiple-choice",
           "question": "The membership for students is:",
-          "options": [
-            "A. Expensive",
-            "B. Free",
-            "C. Cheap"
-          ],
+          "options": ["A. Expensive", "B. Free", "C. Cheap"],
           "correctAnswer": "B"
         }
       ]

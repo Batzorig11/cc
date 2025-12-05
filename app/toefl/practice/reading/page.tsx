@@ -24,6 +24,14 @@ export default function Reading() {
     fetchData();
   }, []);
 
+  if (!tests || tests.length === 0) {
+    return (
+      <div className="w-full h-full flex justify-center items-center text-2xl">
+        No data at the moment!
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-screen flex items-center justify-center flex-col p-4">
       <div className="Gregorian text-2xl m-5">You can do this</div>
