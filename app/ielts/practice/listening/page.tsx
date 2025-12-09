@@ -26,7 +26,7 @@ export default function Reading() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center flex-col p-4">
+    <div className="w-full h-screen flex items-center justify-center flex-col p-4 pt-20">
       <div className="Gregorian text-2xl m-5">You can do this</div>
       {tests.length > 0 ? (
         <div className="w-full h-full gap-10 grid grid-cols-4">
@@ -46,8 +46,9 @@ export default function Reading() {
                 </CardHeader>
                 <CardContent>
                   <p
-                    className={`font-bold  flex justify-start items-center my-2 ${test.complete ? `text-green-500` : `text-blue-500`
-                      }`}
+                    className={`font-bold  flex justify-start items-center my-2 ${
+                      test.complete ? `text-green-500` : `text-blue-500`
+                    }`}
                   >
                     {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
                     {test.complete && <CircleCheck className="ml-2" />}

@@ -26,7 +26,7 @@ export default function Vocabulary() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center flex-col p-4">
+    <div className="w-full h-screen flex items-center justify-center flex-col p-4 pt-20">
       <div className="Gregorian text-2xl m-5">You can do this</div>
       {tests.length > 0 ? (
         <div className="w-full h-full gap-10 grid grid-cols-4">

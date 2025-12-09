@@ -13,13 +13,20 @@ import {
 } from "@/components/ui/popover";
 
 interface Calendar22Props {
+  value?: Date;
   onDateChange?: (date: Date | undefined, daysRemaining: number) => void;
 }
 
-export function Calendar22({ onDateChange }: Calendar22Props) {
+export function Calendar22({ value, onDateChange }: Calendar22Props) {
   const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
+  const [date, setDate] = React.useState<Date | undefined>(value);
 
+
+
+
+  React.useEffect(() => {
+    setDate(value);
+  }, [value]);
   // Calculate days remaining until the selected date
   const calculateDaysRemaining = (selectedDate: Date | undefined): number => {
     if (!selectedDate) return 0;
@@ -34,10 +41,10 @@ export function Calendar22({ onDateChange }: Calendar22Props) {
   // Format the date to display
   const formattedDate = date
     ? new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      }).format(date)
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }).format(date)
     : "Огноо сонгох";
 
   // Calculate days remaining

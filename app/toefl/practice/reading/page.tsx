@@ -26,7 +26,7 @@ export default function Reading() {
 
   if (!tests || tests.length === 0) {
     return (
-      <div className="w-full h-full flex justify-center items-center text-2xl">
+      <div className="w-full h-full flex justify-center items-center text-2xl pt-20">
         No data at the moment!
       </div>
     );

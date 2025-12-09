@@ -9,19 +9,54 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { Calendar22 } from "../../components/calendar";
+import { Calendar22 } from "@/components/calendar.js";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { updateLoggedInUser } from "@/lib/auth.js";
 
-export default function TOEFL() {
+export default function TOEFLPractice() {
+  const [user, setUser] = useState(null);
   const [daysRemaining, setDaysRemaining] = useState(0);
+
+  const handleDateChange = (selectedDate, days) => {
+    const updated = updateLoggedInUser({
+      examDate: selectedDate ? selectedDate.toISOString() : null,
+      daysRemaining: days,
+    });
+
+    setUser(updated);
+    setDaysRemaining(days);
+  };
+
+  useEffect(() => {
+    const savedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (savedUser) {
+      setUser(savedUser);
+      if (savedUser.examDate) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const diff = Math.ceil(
+          (new Date(savedUser.examDate).getTime() - today.getTime()) /
+            (1000 * 60 * 60 * 24)
+        );
+
+        setDaysRemaining(diff);
+      }
+    }
+  }, []);
+
   return (
-    <div className="w-full px-4 flex flex-col justify-center items-center">
+    <div className="w-full px-4 flex flex-col justify-center items-center pt-20">
       <div className=" text-xl flex justify-between w-3/4  ">
         <div className="flex items-center justify-center bg-card rounded-md border flex-col p-10">
           <div className="flex items-center justify-center">
             Шалгалт өгөх өдөр :
-            <Calendar22 onDateChange={(_, days) => setDaysRemaining(days)} />
+            <Calendar22
+              value={user?.examDate ? new Date(user.examDate) : undefined}
+              onDateChange={handleDateChange}
+            />
           </div>
           <div>Үлдсэн хоног : {daysRemaining}</div>
         </div>

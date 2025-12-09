@@ -15,7 +15,19 @@ import Link from "next/link";
 import { CircleCheck, CircleXIcon } from "lucide-react";
 
 export default function Reading() {
-  const [tests, setTests] = useState<any[]>([]);
+  const [tests, setTests] = useState([]);
+  const [user, setUser] = useState(null);
+  const [iscore, setIscore] = useState(0);
+  const [icomplete, setIcomplete] = useState(false);
+
+  useEffect(() => {
+    const savedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    setUser(savedUser);
+    setIscore(savedUser?.iscore || 0);
+    setIcomplete(savedUser?.icomplete || false);
+  }, []);
+
   useEffect(() => {
     async function fetchData() {
       const data = await getAllTests();
@@ -25,7 +37,7 @@ export default function Reading() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center flex-col p-4">
+    <div className="w-full h-screen flex items-center justify-center flex-col p-4 pt-20">
       <div className="Gregorian text-2xl m-5">You can do this</div>
       {tests.length > 0 ? (
         <div className="w-full h-full gap-10 grid grid-cols-4">
@@ -37,7 +49,7 @@ export default function Reading() {
               <Card>
                 <CardHeader>
                   <CardTitle className="w-full tracking-wide">
-                    {test.id}. {test.testTitle}
+                    {test.title}
                   </CardTitle>
                   <CardDescription>
                     Асуултын тоо {test.totalQuestions}
@@ -46,12 +58,12 @@ export default function Reading() {
                 <CardContent>
                   <p
                     className={`font-bold  flex justify-start items-center my-2 ${
-                      test.complete ? `text-green-500` : `text-blue-500`
+                      icomplete ? `text-green-500` : `text-blue-500`
                     }`}
                   >
-                    {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
-                    {test.complete && <CircleCheck className="ml-2" />}
-                    {!test.complete && <CircleXIcon className="ml-2" />}
+                    {icomplete ? "Дууссан" : "Дуусаагүй"}{" "}
+                    {icomplete && <CircleCheck className="ml-2" />}
+                    {!icomplete && <CircleXIcon className="ml-2" />}
                   </p>
                   <p className="my-2">
                     Хугацаа :{" "}
@@ -60,17 +72,14 @@ export default function Reading() {
                   <div>
                     Оноо :{" "}
                     <span className="font-bold">
-                      {test.score ? test.score / test.totalQuestions : "0"} (
-                      {test.score
-                        ? (test.score / test.totalQuestions) * 100
-                        : "0"}
-                      %)
+                      {iscore}/{test.totalQuestions} (
+                      {(iscore / test.totalQuestions) * 100}%)
                     </span>
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button>
-                    <Link href={`math/test/${test.id}`}>Эхлэх</Link>
+                    <Link href={`reading/test/${test.id}`}>Эхлэх</Link>
                   </Button>
                 </CardFooter>
               </Card>

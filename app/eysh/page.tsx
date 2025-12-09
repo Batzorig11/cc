@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function Eysh() {
   const ten = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
-    <div className="w-full h-screen px-10">
+    <div className="w-full h-screen px-10 pt-20">
       <div>ЭЕШ Home Page</div>
       <div className="grid grid-cols-4 gap-10">
         {ten.map((index) => (

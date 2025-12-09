@@ -21,7 +21,7 @@ export default function Math() {
   if (loading) return <div>Loading</div>;
 
   return (
-    <div>
+    <div className="pt-20">
       <div>{test.testTitle}</div>
       <div className="flex flex-col gap-10">
         {test.questions.map((question, index) => (

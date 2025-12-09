@@ -10,7 +10,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function IeltsPage() {
   return (
-    <div className="w-full min-h-screen px-10 text-2xl">
+    <div className="w-full min-h-screen px-10 text-2xl pt-20">
       <div className="w-full h-fit flex flex-col justify-center items-center">
         <Button className="text-3xl p-10">
           <Link href="ielts/practice">Дасгал ажиллаж эхлэх</Link>

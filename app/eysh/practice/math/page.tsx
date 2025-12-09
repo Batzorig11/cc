@@ -25,7 +25,7 @@ export default function Reading() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center flex-col p-4">
+    <div className="w-full h-screen flex items-center justify-center flex-col p-4 pt-20">
       <div className="Gregorian text-2xl m-5">You can do this</div>
       {tests.length > 0 ? (
         <div className="w-full h-full gap-10 grid grid-cols-4">
@@ -37,7 +37,7 @@ export default function Reading() {
               <Card>
                 <CardHeader>
                   <CardTitle className="w-full tracking-wide">
-                    {test.title}
+                    {test.id}. {test.testTitle}
                   </CardTitle>
                   <CardDescription>
                     Асуултын тоо {test.totalQuestions}
@@ -60,14 +60,17 @@ export default function Reading() {
                   <div>
                     Оноо :{" "}
                     <span className="font-bold">
-                      {test.score}/{test.totalQuestions} (
-                      {(test.score / test.totalQuestions) * 100}%)
+                      {test.score ? test.score / test.totalQuestions : "0"} (
+                      {test.score
+                        ? (test.score / test.totalQuestions) * 100
+                        : "0"}
+                      %)
                     </span>
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button>
-                    <Link href={`reading/test/${test.id}`}>Эхлэх</Link>
+                    <Link href={`math/test/${test.id}`}>Эхлэх</Link>
                   </Button>
                 </CardFooter>
               </Card>

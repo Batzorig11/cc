@@ -42,12 +42,10 @@ export default function MockTest() {
         ]);
 
       setTests({
-        reading:
-          readingTests[Math.floor(Math.random() * readingTests.length)],
+        reading: readingTests[Math.floor(Math.random() * readingTests.length)],
         listening:
           listeningTests[Math.floor(Math.random() * listeningTests.length)],
-        writing:
-          writingTests[Math.floor(Math.random() * writingTests.length)],
+        writing: writingTests[Math.floor(Math.random() * writingTests.length)],
         speaking:
           speakingTests[Math.floor(Math.random() * speakingTests.length)],
       });
@@ -60,7 +58,11 @@ export default function MockTest() {
     if (timeLeft > 0) {
       const timer = setInterval(() => setTimeLeft((prev) => prev - 1), 1000);
       return () => clearInterval(timer);
-    } else if (timeLeft === 0 && currentSection !== "intro" && currentSection !== "result") {
+    } else if (
+      timeLeft === 0 &&
+      currentSection !== "intro" &&
+      currentSection !== "result"
+    ) {
       handleNextSection();
     }
   }, [timeLeft, currentSection]);
@@ -106,7 +108,10 @@ export default function MockTest() {
           return userAnswer === question.correctAnswer;
         } else {
           // Text comparison
-          return userAnswer.toLowerCase().trim() === question.correctAnswer.toLowerCase().trim();
+          return (
+            userAnswer.toLowerCase().trim() ===
+            question.correctAnswer.toLowerCase().trim()
+          );
         }
       } else if (question.correctAnswers) {
         // Matching questions
@@ -149,17 +154,28 @@ export default function MockTest() {
     return `${m}:${s.toString().padStart(2, "0")}`;
   };
 
-  if (loading) return <div className="flex h-screen items-center justify-center">Loading Test...</div>;
+  if (loading)
+    return (
+      <div className="flex h-screen items-center justify-center">
+        Loading Test...
+      </div>
+    );
 
   return (
-    <div className="min-h-screen p-4 flex flex-col items-center">
+    <div className="min-h-screen p-4 flex flex-col items-center pt-20">
       {/* Header */}
       <div className="w-full max-w-6xl flex justify-between items-center mb-6 p-4 border rounded-lg bg-card shadow-sm">
         <h1 className="text-2xl font-bold">IELTS Mock Test</h1>
         <div className="flex gap-4 items-center">
-          <span className="font-semibold capitalize text-lg text-primary">Section: {currentSection}</span>
+          <span className="font-semibold capitalize text-lg text-primary">
+            Section: {currentSection}
+          </span>
           {currentSection !== "intro" && currentSection !== "result" && (
-            <span className={`font-mono text-xl ${timeLeft < 300 ? 'text-red-500' : ''}`}>
+            <span
+              className={`font-mono text-xl ${
+                timeLeft < 300 ? "text-red-500" : ""
+              }`}
+            >
               Time Left: {formatTime(timeLeft)}
             </span>
           )}
@@ -168,7 +184,6 @@ export default function MockTest() {
 
       {/* Content */}
       <div className="w-full max-w-6xl flex-1">
-
         {/* INTRO */}
         {currentSection === "intro" && (
           <Card className="max-w-2xl mx-auto mt-10">
@@ -176,19 +191,32 @@ export default function MockTest() {
               <CardTitle>Welcome to the Full Mock Test</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p>This mock test consists of 4 sections in the following order:</p>
+              <p>
+                This mock test consists of 4 sections in the following order:
+              </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>Listening:</strong> 30 minutes</li>
-                <li><strong>Reading:</strong> 60 minutes</li>
-                <li><strong>Writing:</strong> 60 minutes</li>
-                <li><strong>Speaking:</strong> 11-14 minutes</li>
+                <li>
+                  <strong>Listening:</strong> 30 minutes
+                </li>
+                <li>
+                  <strong>Reading:</strong> 60 minutes
+                </li>
+                <li>
+                  <strong>Writing:</strong> 60 minutes
+                </li>
+                <li>
+                  <strong>Speaking:</strong> 11-14 minutes
+                </li>
               </ul>
               <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-md border border-yellow-200 dark:border-yellow-800">
                 <p className="text-yellow-800 dark:text-yellow-200 text-sm">
-                  Note: This is a simulation. Writing and Speaking sections are not graded automatically.
+                  Note: This is a simulation. Writing and Speaking sections are
+                  not graded automatically.
                 </p>
               </div>
-              <Button size="lg" className="w-full mt-4" onClick={startTest}>Start Mock Test</Button>
+              <Button size="lg" className="w-full mt-4" onClick={startTest}>
+                Start Mock Test
+              </Button>
             </CardContent>
           </Card>
         )}
@@ -197,7 +225,9 @@ export default function MockTest() {
         {currentSection === "listening" && tests.listening && (
           <div className="space-y-6">
             <div className="bg-muted p-4 rounded-md">
-              <h2 className="text-xl font-bold mb-2">{tests.listening.title}</h2>
+              <h2 className="text-xl font-bold mb-2">
+                {tests.listening.title}
+              </h2>
               <p>Audio would play here for each section.</p>
             </div>
             {tests.listening.sections.map((section: any) => (
@@ -205,18 +235,26 @@ export default function MockTest() {
                 <CardHeader>
                   <CardTitle>{section.title}</CardTitle>
                   <div className="text-sm text-muted-foreground bg-muted p-2 rounded mt-2">
-                    <strong>Transcript (Simulation):</strong> {section.audioTranscript}
+                    <strong>Transcript (Simulation):</strong>{" "}
+                    {section.audioTranscript}
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {section.questions.map((q: any) => (
-                    <QuestionItem key={q.id} question={q} answers={answers} setAnswers={setAnswers} />
+                    <QuestionItem
+                      key={q.id}
+                      question={q}
+                      answers={answers}
+                      setAnswers={setAnswers}
+                    />
                   ))}
                 </CardContent>
               </Card>
             ))}
             <div className="flex justify-end">
-              <Button onClick={handleNextSection}>Submit Listening & Continue</Button>
+              <Button onClick={handleNextSection}>
+                Submit Listening & Continue
+              </Button>
             </div>
           </div>
         )}
@@ -238,24 +276,39 @@ export default function MockTest() {
                   </Button>
                 ))}
               </div>
-              <h2 className="text-xl font-bold mb-4">{tests.reading.passages[passageNum - 1].title}</h2>
+              <h2 className="text-xl font-bold mb-4">
+                {tests.reading.passages[passageNum - 1].title}
+              </h2>
               <div className="space-y-4 text-justify">
-                {tests.reading.passages[passageNum - 1].text.split("\n\n").map((para: string, i: number) => (
-                  <p key={i}>{para}</p>
-                ))}
+                {tests.reading.passages[passageNum - 1].text
+                  .split("\n\n")
+                  .map((para: string, i: number) => (
+                    <p key={i}>{para}</p>
+                  ))}
               </div>
             </div>
 
             {/* Questions */}
             <div className="w-1/2 h-full overflow-y-auto p-4 border rounded-md bg-card">
-              <h3 className="font-bold mb-4 sticky top-0 bg-card py-2 border-b">Questions</h3>
+              <h3 className="font-bold mb-4 sticky top-0 bg-card py-2 border-b">
+                Questions
+              </h3>
               <div className="space-y-6">
-                {tests.reading.passages[passageNum - 1].questions.map((q: any) => (
-                  <QuestionItem key={q.id} question={q} answers={answers} setAnswers={setAnswers} />
-                ))}
+                {tests.reading.passages[passageNum - 1].questions.map(
+                  (q: any) => (
+                    <QuestionItem
+                      key={q.id}
+                      question={q}
+                      answers={answers}
+                      setAnswers={setAnswers}
+                    />
+                  )
+                )}
               </div>
               <div className="mt-8 flex justify-end">
-                <Button onClick={handleNextSection}>Submit Reading & Continue</Button>
+                <Button onClick={handleNextSection}>
+                  Submit Reading & Continue
+                </Button>
               </div>
             </div>
           </div>
@@ -267,8 +320,12 @@ export default function MockTest() {
             {tests.writing.tasks.map((task: any) => (
               <Card key={task.id}>
                 <CardHeader>
-                  <CardTitle>Task {task.taskNumber} ({task.type})</CardTitle>
-                  <div className="text-sm text-muted-foreground">Word Limit: {task.wordLimit}</div>
+                  <CardTitle>
+                    Task {task.taskNumber} ({task.type})
+                  </CardTitle>
+                  <div className="text-sm text-muted-foreground">
+                    Word Limit: {task.wordLimit}
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="bg-muted p-4 rounded-md whitespace-pre-wrap">
@@ -276,24 +333,35 @@ export default function MockTest() {
                   </div>
                   {task.chartData && (
                     <div className="p-4 border rounded bg-white dark:bg-black">
-                      <pre className="text-xs">{JSON.stringify(task.chartData, null, 2)}</pre>
-                      <p className="text-xs text-muted-foreground mt-2">Chart visualization placeholder</p>
+                      <pre className="text-xs">
+                        {JSON.stringify(task.chartData, null, 2)}
+                      </pre>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Chart visualization placeholder
+                      </p>
                     </div>
                   )}
                   <Textarea
                     placeholder="Type your answer here..."
                     className="min-h-[300px]"
                     value={answers[task.id] || ""}
-                    onChange={(e) => setAnswers({ ...answers, [task.id]: e.target.value })}
+                    onChange={(e) =>
+                      setAnswers({ ...answers, [task.id]: e.target.value })
+                    }
                   />
                   <div className="text-right text-sm text-muted-foreground">
-                    Word count: {answers[task.id] ? answers[task.id].trim().split(/\s+/).length : 0}
+                    Word count:{" "}
+                    {answers[task.id]
+                      ? answers[task.id].trim().split(/\s+/).length
+                      : 0}
                   </div>
                 </CardContent>
               </Card>
             ))}
             <div className="flex justify-end">
-              <Button onClick={handleNextSection}>Submit Writing & Continue</Button>
+              <Button onClick={handleNextSection}>
+                Submit Writing & Continue
+              </Button>
             </div>
           </div>
         )}
@@ -308,8 +376,12 @@ export default function MockTest() {
               <CardContent className="space-y-8">
                 {tests.speaking.parts.map((part: any) => (
                   <div key={part.id} className="border-b pb-6 last:border-0">
-                    <h3 className="text-lg font-bold mb-2">Part {part.partNumber}: {part.title}</h3>
-                    <p className="text-muted-foreground mb-4">{part.instructions}</p>
+                    <h3 className="text-lg font-bold mb-2">
+                      Part {part.partNumber}: {part.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {part.instructions}
+                    </p>
 
                     {part.cueCard ? (
                       <div className="bg-muted p-4 rounded-md mb-4">
@@ -323,7 +395,10 @@ export default function MockTest() {
                     ) : (
                       <div className="space-y-2">
                         {part.questions.map((q: any) => (
-                          <div key={q.id} className="p-3 bg-secondary/20 rounded">
+                          <div
+                            key={q.id}
+                            className="p-3 bg-secondary/20 rounded"
+                          >
                             <span className="font-medium">{q.question}</span>
                           </div>
                         ))}
@@ -333,10 +408,17 @@ export default function MockTest() {
                 ))}
                 <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-md border border-yellow-200 dark:border-yellow-800">
                   <p className="text-yellow-800 dark:text-yellow-200 text-sm">
-                    In a real test, you would be recording your answers. For this practice, please speak your answers aloud.
+                    In a real test, you would be recording your answers. For
+                    this practice, please speak your answers aloud.
                   </p>
                 </div>
-                <Button className="w-full" size="lg" onClick={handleNextSection}>Finish Test</Button>
+                <Button
+                  className="w-full"
+                  size="lg"
+                  onClick={handleNextSection}
+                >
+                  Finish Test
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -346,32 +428,44 @@ export default function MockTest() {
         {currentSection === "result" && (
           <Card className="max-w-2xl mx-auto mt-10">
             <CardHeader>
-              <CardTitle className="text-center text-3xl">Test Complete!</CardTitle>
+              <CardTitle className="text-center text-3xl">
+                Test Complete!
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 border rounded-md text-center">
                   <div className="text-muted-foreground">Listening Score</div>
-                  <div className="text-3xl font-bold text-primary">{scores.listening} / 40</div>
+                  <div className="text-3xl font-bold text-primary">
+                    {scores.listening} / 40
+                  </div>
                 </div>
                 <div className="p-4 border rounded-md text-center">
                   <div className="text-muted-foreground">Reading Score</div>
-                  <div className="text-3xl font-bold text-primary">{scores.reading} / 40</div>
+                  <div className="text-3xl font-bold text-primary">
+                    {scores.reading} / 40
+                  </div>
                 </div>
                 <div className="p-4 border rounded-md text-center">
                   <div className="text-muted-foreground">Writing</div>
-                  <div className="text-xl font-bold text-yellow-600">{scores.writing}</div>
+                  <div className="text-xl font-bold text-yellow-600">
+                    {scores.writing}
+                  </div>
                 </div>
                 <div className="p-4 border rounded-md text-center">
                   <div className="text-muted-foreground">Speaking</div>
-                  <div className="text-xl font-bold text-yellow-600">{scores.speaking}</div>
+                  <div className="text-xl font-bold text-yellow-600">
+                    {scores.speaking}
+                  </div>
                 </div>
               </div>
               <div className="flex justify-center gap-4">
                 <Button asChild variant="outline">
                   <Link href="/ielts/practice">Back to Practice</Link>
                 </Button>
-                <Button onClick={() => window.location.reload()}>Take Another Test</Button>
+                <Button onClick={() => window.location.reload()}>
+                  Take Another Test
+                </Button>
               </div>
             </CardContent>
           </Card>
@@ -382,7 +476,15 @@ export default function MockTest() {
 }
 
 // Reusable Question Component
-function QuestionItem({ question, answers, setAnswers }: { question: any, answers: any, setAnswers: any }) {
+function QuestionItem({
+  question,
+  answers,
+  setAnswers,
+}: {
+  question: any;
+  answers: any;
+  setAnswers: any;
+}) {
   const handleChange = (key: string, value: any) => {
     setAnswers((prev: any) => ({ ...prev, [key]: value }));
   };
@@ -396,7 +498,10 @@ function QuestionItem({ question, answers, setAnswers }: { question: any, answer
       {question.type === "multiple-choice" && (
         <div className="space-y-2 ml-4">
           {question.options.map((opt: string) => (
-            <label key={opt} className="flex items-center space-x-2 cursor-pointer">
+            <label
+              key={opt}
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <input
                 type="radio"
                 name={question.id}
@@ -414,7 +519,10 @@ function QuestionItem({ question, answers, setAnswers }: { question: any, answer
       {question.type === "true-false-not-given" && (
         <div className="flex gap-4 ml-4">
           {["TRUE", "FALSE", "NOT GIVEN"].map((opt) => (
-            <label key={opt} className="flex items-center space-x-2 cursor-pointer">
+            <label
+              key={opt}
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <input
                 type="radio"
                 name={question.id}
@@ -429,7 +537,8 @@ function QuestionItem({ question, answers, setAnswers }: { question: any, answer
         </div>
       )}
 
-      {(question.type === "short-answer" || question.type === "sentence-completion") && (
+      {(question.type === "short-answer" ||
+        question.type === "sentence-completion") && (
         <div className="ml-4">
           <Input
             placeholder={`Answer (max ${question.wordLimit} words)`}
@@ -442,15 +551,21 @@ function QuestionItem({ question, answers, setAnswers }: { question: any, answer
 
       {question.type === "matching-information" && (
         <div className="ml-4 space-y-2">
-          <div className="text-sm bg-muted p-2 rounded mb-2 whitespace-pre-wrap">{question.instruction}</div>
+          <div className="text-sm bg-muted p-2 rounded mb-2 whitespace-pre-wrap">
+            {question.instruction}
+          </div>
           {Object.keys(question.correctAnswers).map((key, idx) => (
             <div key={key} className="flex items-center gap-2">
-              <span>{question.questionNumber + idx}. {key}</span>
+              <span>
+                {question.questionNumber + idx}. {key}
+              </span>
               <Input
                 className="w-16"
                 placeholder="1-4"
                 value={answers[`${question.id}-${key}`] || ""}
-                onChange={(e) => handleChange(`${question.id}-${key}`, e.target.value)}
+                onChange={(e) =>
+                  handleChange(`${question.id}-${key}`, e.target.value)
+                }
               />
             </div>
           ))}
@@ -461,16 +576,22 @@ function QuestionItem({ question, answers, setAnswers }: { question: any, answer
         <div className="ml-4 space-y-2">
           <div className="border p-2 rounded mb-2">
             {Object.entries(question.features).map(([k, v]: any) => (
-              <div key={k}>{k}. {v}</div>
+              <div key={k}>
+                {k}. {v}
+              </div>
             ))}
           </div>
           {Object.keys(question.correctAnswers).map((key, idx) => (
             <div key={key} className="flex items-center gap-2">
-              <span className="flex-1">{question.questionNumber + idx}. {key}</span>
+              <span className="flex-1">
+                {question.questionNumber + idx}. {key}
+              </span>
               <Input
                 className="w-16"
                 value={answers[`${question.id}-${key}`] || ""}
-                onChange={(e) => handleChange(`${question.id}-${key}`, e.target.value)}
+                onChange={(e) =>
+                  handleChange(`${question.id}-${key}`, e.target.value)
+                }
               />
             </div>
           ))}

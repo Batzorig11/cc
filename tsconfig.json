@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,9 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -37,9 +31,14 @@
     "**/*.mts",
     "app/ielts/practice/reading/test/[id]/page.tsx",
     "app/ielts/practice/writing/page.js",
-    "app/components/navbar.js"
+    "app/components/navbar.js",
+    "app/login/page.js",
+    "app/signup/page.js",
+    "app/ielts/practice/page.js",
+    "app/components/calendar.js",
+    "app/toefl/practice/page.jsx",
+    "app/ielts/practice/reading/page.jsx",
+    "components/navbar.jsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
