@@ -58,12 +58,12 @@ export default function Reading() {
                 <CardContent>
                   <p
                     className={`font-bold  flex justify-start items-center my-2 ${
-                      icomplete ? `text-green-500` : `text-blue-500`
+                      test.complete ? `text-green-500` : `text-blue-500`
                     }`}
                   >
-                    {icomplete ? "Дууссан" : "Дуусаагүй"}{" "}
-                    {icomplete && <CircleCheck className="ml-2" />}
-                    {!icomplete && <CircleXIcon className="ml-2" />}
+                    {test.complete ? "Дууссан" : "Дуусаагүй"}{" "}
+                    {test.complete && <CircleCheck className="ml-2" />}
+                    {!test.complete && <CircleXIcon className="ml-2" />}
                   </p>
                   <p className="my-2">
                     Хугацаа :{" "}
@@ -72,8 +72,8 @@ export default function Reading() {
                   <div>
                     Оноо :{" "}
                     <span className="font-bold">
-                      {iscore}/{test.totalQuestions} (
-                      {(iscore / test.totalQuestions) * 100}%)
+                      {test.score}/{test.totalQuestions} (
+                      {(test.score / test.totalQuestions) * 100}%)
                     </span>
                   </div>
                 </CardContent>

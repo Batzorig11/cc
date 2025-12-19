@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { Calendar22 } from "@/components/calendar.js";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { updateLoggedInUser } from "@/lib/auth.js";
